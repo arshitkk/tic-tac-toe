@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000000; 
+}
+
+.container{
+    height: 100vh; 
+    width : 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.grid{
+    position: relative;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.boxes{
+    border: 1px solid greenyellow;
+    height: 9rem;
+    width: 9rem;
+    font-size: 7rem;
+    font-family:Arial, Helvetica, sans-serif;
+    color: greenyellow;
+    text-align: center;
+    align-content: center;
+}
+.boxes .txt{
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.box1{
+    border-left: none;
+    border-top: none;
+    
+}
+.box2{
+    border-top: none;
+}
+.box3{
+    border-right: none;
+    border-top: none;
+}
+.box4{
+    border-left: none;
+}
+
+.box6{
+    border-right: none;
+}
+.box7{
+    border-left:none ;
+    border-bottom:none ;
+}
+.box8{
+    border-bottom:none ;
+}
+.box9{
+    border-right:none ;
+    border-bottom:none ;
+}
+
+.boxes:hover{
+    background-color: rgba(172, 255, 47, 0.127);
+}
+
+.boxes:active{
+    background-color: rgba(172, 255, 47, 0);
+}
+
+.info{
+    color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 10rem;
+    gap: 1rem;
+    align-self: flex-start;
+}
+
+.head{
+    font-size: 4rem;
+    text-decoration: underline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.turn{
+    margin-top: 2rem;
+    font-size: 2rem;
+    background-color: greenyellow;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    text-align: center;
+    width: 65%;
+    animation-name: turn;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@keyframes turn{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 1;
+    }
+}
+
+.reset{
+    font-size: 2rem;
+    margin-left: 9rem;
+    margin-top: 8rem;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: #000000;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    box-shadow: 0px 0px 11px 2px greenyellow;
+}
+.reset:hover{
+    background-color: rgba(172, 255, 47, 0.201);
+
+    }
+.reset:active{
+        transform: scale(0.9);
+        box-shadow: 0px 0px 23px 9px rgba(172, 255, 47, 0.226);
+        
+    }
+    
+    .line{
+    height: 0.5rem;
+    /* width: 27.5rem; */
+    width:0;
+    background-color: red;
+    position: absolute;
+    opacity: 0;
+    /* max-height: 433px;
+    max-width: 433px; */
+    transform:translate(140px, 215px) rotate(90deg);
+    background-color: rgba(255, 0, 0, 0);
+    z-index: 10;
+    transition: opacity 1s ease;
+
+}
+
+@media (max-width:937px) {
+    .info{
+        margin-left: 1%;
+        margin-top: 1rem;
+        gap: 0rem;
+    }
+    .reset{
+        margin:3rem;
+        margin-left: 6rem;
+    }
+    .head{
+        font-size: 3rem;
+    }
+.turn{
+    margin-left: 3rem;
+}
+}
